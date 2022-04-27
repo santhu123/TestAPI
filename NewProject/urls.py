@@ -24,10 +24,15 @@ urlpatterns = [
     path('users',views.AllUsers),
     path('login',views.Login),
     path('single/<str:pk>',views.SingleUser),
-    path('updateuser/<str:pk>',views.Updateuserdata)
+    path('updateuser/<str:pk>',views.Updateuserdata),
+    path('fileconvert',views.FileConversion)
 ]
+# http://127.0.0.1:800/singup
 
-# Django---
+# function--send the data--will be sent to http://127.0.0.1:800/singup via HTTP Request ..
+
+# the data will be sent in body of the request
+# # Django---
 
 # username --this won't be in ur control 
 # password  

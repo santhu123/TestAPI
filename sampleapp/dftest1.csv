@@ -1,0 +1,10 @@
+measurement_network_name,measurement_network_displayname,measurement_network_id,measurement_network_tag,company_name
+aws-me-south-1b,"AWS Middle East (Bahrain, BH) Zone ",1028,aws_me_south_1b,Amazon AWS
+aws-me-south-1c,"AWS Middle East (Bahrain, BH) Zone C",1029,aws_me_south_1c,Amazon AWS
+aws-me-south-1a,"AWS Middle East (Bahrain, BH) Zone A",1030,aws_me_south_1a,Amazon AWS
+gcp-asia-south1-a,"Google Asia Pacific (Mumbai, IN) Zone ",1216,gcp_asia_south1_a,Google Cloud Platform
+gcp-asia-south1-b,"Google Asia Pacific (Mumbai, IN) Zone B",1217,gcp_asia_south1_b,Google Cloud Platform
+gcp-asia-south1-c,"Google Asia Pacific (Mumbai, IN) Zone C",1218,gcp_asia_south1_c,Google Cloud Platform
+azure-uaenorth,Microsoft Azure UAE North (Dubai),1163,azure_uaenorth,Microsoft Azure
+oracle-me-abudhabi-1,Oracle Abudhabi 1 (ME),1422,oracle_me_abudhabi_1,Oracle Cloud
+do-blr1,Digital Ocean (Bangalore) 1,1303,do_blr1,Digital Ocean

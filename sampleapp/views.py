@@ -12,7 +12,12 @@ from rest_framework.permissions import AllowAny,IsAuthenticated,IsAdminUser
 from rest_framework import status
 from django.contrib.auth import authenticate
 from .service import generatetoken
+from rest_framework.parsers import MultiPartParser,FormParser
 # Create your views here.
+import pandas as pd
+import json
+from pandas.io.json import json_normalize
+
 
 @api_view(['POST'])
 @permission_classes([AllowAny])
@@ -32,7 +37,6 @@ def Register(request):
         serializer.save()
         return Response(serializer.data,status=status.HTTP_201_CREATED)
     return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
-
 
 
 @api_view(['GET'])
@@ -76,7 +80,42 @@ def Login(request):
         print(token)
         return Response(token,status=status.HTTP_200_OK)
     return Response(serializer.errors,status=status.HTTP_200_OK)
+
+@api_view(['POST'])
+@permission_classes([AllowAny])
+@parser_classes([MultiPartParser])
+def FileConversion(request):
+    print(request.FILES)
+    file_list=request.FILES.getlist('file')
+    # for item in file_list:
+        # with open(item) as json_file:
+        #     newdata=json.load(json_file)
+        #     print(newdata)
+        #     data=json.loads(newdata[0])
+        #     print(data)
+        # mydata=data["analysis"]
     
+    with open(request.FILES['file']) as json_file:
+        newdata=json.load(json_file)
+        data=json.loads(newdata[0])
+    mydata=data["analysis"]
+   
+    df=pd.json_normalize(mydata,'timeseries','company_name')
+    df1=pd.json_normalize(mydata,'networks','company_name')
+
+
+
+    results=pd.merge(df,df1,on='company_name')
+    results.to_csv('MYFineTest.csv',index=False)
+    
+    
+
+
+
+
+
+
+   
 # email
 # PasswordInput
 # front end framework---html--email,password--submit--loginapi--op--token-

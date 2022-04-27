@@ -1,0 +1,62 @@
+
+>
+u have to share the code ur teams 
+
+
+email
+sharepoint folder
+
+git software
+
+github,bitbucket ..hosting services for the git 
+
+simply push the code
+repository---they will give space 
+git operations:
+
+u have to push ur code to github or bitbucket..
+
+3 accounts 
+1--persone
+2.--account
+3.ur company account
+
+push --3.company id accounts will be as contributos
+
+Steps to git operations:
+
+1.u have to create one empty new repository
+
+once u create the repository---u will be getting some link  
+2.u have add that remote link to ur current project folder  
+
+for the first time to that u have to intializet as git repository
+git init
+that folder got the permissions to do git operation(git commands)
+3.git add all the files using one command (git add .)
+4.git commit -m "First commit"
+5.git pull origin master
+6.git checkout -b newapi 
+it will switched to master to branch
+
+
+master and branch  ---
+ can do merging with master with all branches  
+
+5--api
+5--5 sepe
+
+git pull origin newapi
+
+merge confict ...
+
+
+
+
+
+ 
+
+
+
+
+
