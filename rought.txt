@@ -1,0 +1,12 @@
+pip install django
+pip install restframework
+pip3 install psycopg2-binary
+ModuleNotFoundError: No module named 'msilib'
+===================
+from serializer commented the below lines
+====================================
+#from msilib.schema import tables
+#from typing_extensions import Required
+#from requests import request
+
+pip install djangorestframework-jwt
