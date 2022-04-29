@@ -1,7 +1,9 @@
 from dataclasses import field
 from msilib.schema import tables
+from tkinter.tix import Tree
 from typing_extensions import Required
 from unittest.util import _MAX_LENGTH
+from django.forms import PasswordInput
 from requests import request
 from rest_framework import serializers
 from sampleapp.models import Book,B2CUser
@@ -48,3 +50,17 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model=B2CUser
         fields='__all__'
+
+
+# change password:
+class ChangePasswordSerializer(serializers.Serializer):
+    email=serializers.EmailField(required=True)
+    password=serializers.CharField(required=True,min_length=8)
+    newpassword=serializers.CharField(required=True,min_length=8)
+    def validate(self, validated_data):
+        user=B2CUser.objects.filter(email=validated_data["email"])
+        if not user.exists():
+            raise serializers.ValidationError({"email":"Email Not Found"})
+        if not check_password(validated_data["password"],user.first().password):
+            raise serializers.ValidationError({'password':"incorrect password"})
+        return validated_data
