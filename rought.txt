@@ -10,3 +10,22 @@ from serializer commented the below lines
 #from requests import request
 
 pip install djangorestframework-jwt
+
+{{ in my first pull
+    remote: Enumerating objects: 22, done.
+remote: Counting objects: 100% (22/22), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 12 (delta 10), reused 12 (delta 10), pack-reused 0
+Unpacking objects: 100% (12/12), 6.29 KiB | 160.00 KiB/s, done.
+From https://github.com/santhu123/TestAPI
+ * branch            master     -> FETCH_HEAD
+   45fcdff..d4d3928  master     -> origin/master
+Auto-merging sampleapp/serializer.py
+CONFLICT (content): Merge conflict in sampleapp/serializer.py
+Automatic merge failed; fix conflicts and then commit the result.
+
+
+}}
+
+Well versed with CI/CD tooling GIT/ Bitbucket/ Jenkins/ Automated testing tools
+•    Familiarity with GCP and/or AWS

@@ -25,7 +25,9 @@ urlpatterns = [
     path('login',views.Login),
     path('single/<str:pk>',views.SingleUser),
     path('updateuser/<str:pk>',views.Updateuserdata),
-    path('fileconvert',views.FileConversion)
+    path('fileconvert',views.FileConversion),
+    
+    path('changepassword',views.Change_Password)
 ]
 # http://127.0.0.1:800/singup
 

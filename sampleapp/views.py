@@ -3,7 +3,7 @@ import profile
 from django.forms import PasswordInput
 from django.shortcuts import render
 from rest_framework import serializers
-from sampleapp.serializer import BookSerializer,RegisterSerializer,UserSerializer,LoginSerializer
+from sampleapp.serializer import BookSerializer,RegisterSerializer,UserSerializer,LoginSerializer,ChangePasswordSerializer
 from sampleapp.models import Book,B2CUser
 from rest_framework.decorators import api_view,parser_classes,permission_classes
 from rest_framework.response import Response
@@ -114,7 +114,16 @@ def FileConversion(request):
 
 
 
-
+@api_view(['POST'])
+@permission_classes([AllowAny])
+def Change_Password(request):
+    serializer=ChangePasswordSerializer(data=request.data)
+    if serializer.is_valid():
+        user=B2CUser.objects.get(email=serializer.data["email"])
+        user.set_password(serializer.data["newpassword"])
+        user.save()
+        return Response(serializer.data,status=status.HTTP_200_OK)
+    return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
    
 # email
 # PasswordInput
@@ -134,3 +143,4 @@ def FileConversion(request):
     
     # token---with api---it will give u the results:
         
+   
