@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'sampleapp',
+    'CBVApp',
     'rest_framework'
 ]
 
@@ -52,14 +53,16 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 AUTH_USER_MODEL="sampleapp.B2CUser"
-REST_FRAMEWORK={
-    'DEFAULT_PERMISSION_CLASSES':('rest_framework.permissions.IsAuthenticated'),
-    'DEFAULT_AUTHENTICATION_CLASSES':(
-        'rest_framework.authentication.BasicAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
-        'rest_framework_jwt.authentication.JSONWebTokenAuthentication'
-    )
-}
+# REST_FRAMEWORK={
+#     'DEFAULT_PERMISSION_CLASSES':('rest_framework.permissions.IsAuthenticated'),
+#     'DEFAULT_AUTHENTICATION_CLASSES':(
+#         'rest_framework.authentication.BasicAuthentication',
+#         'rest_framework.authentication.SessionAuthentication',
+#         'rest_framework_jwt.authentication.JSONWebTokenAuthentication'
+#     )
+# }
+
+
 ROOT_URLCONF = 'NewProject.urls'
 
 TEMPLATES = [

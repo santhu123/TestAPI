@@ -16,18 +16,25 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from sampleapp import serializer, views
+from CBVApp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('createbookdata/',views.BookView),
-    path('signup',views.Register),
-    path('users',views.AllUsers),
-    path('login',views.Login),
-    path('single/<str:pk>',views.SingleUser),
-    path('updateuser/<str:pk>',views.Updateuserdata),
-    path('fileconvert',views.FileConversion),
+    #path('createbookdata/',views.BookView),
+    # path('signup',views.Register),
+    # path('users',views.AllUsers),
+    # path('login',views.Login),
+    # path('single/<str:pk>',views.SingleUser),
+    # path('updateuser/<str:pk>',views.Updateuserdata),
+    # path('fileconvert',views.FileConversion),
     
-    path('changepassword',views.Change_Password)
+    # path('changepassword',views.Change_Password),
+    path('addmovie',views.MovieListCreate.as_view()),
+    path('movielist',views.MoviewListView.as_view()),
+    path('updatemoview/<int:pk>',views.MovieRetriveUpdateView.as_view()),
+     path('deletemovie/<int:pk>',views.MoviewRetrievDestroy.as_view()),
+ 
+    
 ]
 # http://127.0.0.1:800/singup
 

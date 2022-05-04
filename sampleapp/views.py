@@ -108,10 +108,6 @@ def FileConversion(request):
     results=pd.merge(df,df1,on='company_name')
     results.to_csv('MYFineTest.csv',index=False)
     
-    
-
-
-
 
 
 @api_view(['POST'])
