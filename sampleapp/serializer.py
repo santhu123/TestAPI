@@ -1,18 +1,7 @@
-from dataclasses import field
-from msilib.schema import tables
-from tkinter.tix import Tree
-from typing_extensions import Required
-from unittest.util import _MAX_LENGTH
-from django.forms import PasswordInput
-from requests import request
 from rest_framework import serializers
 from sampleapp.models import Book,B2CUser
 from rest_framework.validators import UniqueValidator
 from django.contrib.auth.hashers import check_password
-
-
-
-
 
 ##Model Serilaizer
 class BookSerializer(serializers.ModelSerializer):
