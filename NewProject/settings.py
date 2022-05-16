@@ -59,12 +59,16 @@ REST_FRAMEWORK={
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework_jwt.authentication.JSONWebTokenAuthentication'
+<<<<<<< HEAD
     ),
     # 'DEFAULT_AUTHENTICATION_CLASSES': [
     #     'rest_framework_simplejwt.authentication.JWTAuthentication',
     #     'rest_framework.authentication.SessionAuthentication'
     # ]
 
+=======
+    )
+>>>>>>> d80158ac213e687e5c8e1304cdb1dd9cedaabf0c
 }
 
 
